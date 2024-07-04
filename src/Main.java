@@ -1,9 +1,15 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        ArraysStrings.zeroMatrix(new int[][]{
-                {1,0,3},
-                {4,5,6},
-                {7,8,1}
-        });
+
+        LinkedList l1 = new LinkedList();
+        l1.addNodeAtEnd(1);
+        l1.addNodeAtEnd(2);
+        l1.addNodeAtEnd(3);
+        l1.addNodeAtEnd(2);
+        l1.addNodeAtEnd(1);
+        l1.printLinkedList();
+        System.out.print(l1.isPalindrome(l1));
     }
 }
