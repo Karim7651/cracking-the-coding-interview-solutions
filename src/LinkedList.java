@@ -398,6 +398,7 @@ public class LinkedList {
     //2. Move FastPointer at a rate of 2 steps and SlowPointer at a rate of 1 step.
     //3. When they collide, move SlowPointer to LinkedListHead. Keep FastPointer where it is.
     //4. Move SlowPointer and FastPointer at a rate of one step. Return the new collision point
+
     public Node returnLoopStartNode1(LinkedList l1){
         Node slow = head;
         Node fast = head;
@@ -419,9 +420,8 @@ public class LinkedList {
         }
         return fast;
     }
-
-
     public class Node {
+
         int value;
         Node next;
 
