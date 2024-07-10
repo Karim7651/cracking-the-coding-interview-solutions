@@ -112,5 +112,27 @@ public class LeetCodeArraysStrings {
         }
         return new ArrayList<>(map.values());
     }
+    //1002. Find Common Characters
+    public List<String> commonChars(String[] words) {
+        int[] minFreq = new int[26];
+        Arrays.fill(minFreq,Integer.MAX_VALUE);
+        for(String s : words){
+            int[] charCount = new int[26];
+            for(char c : s.toCharArray()){
+                charCount[c-'a']++;
+            }
+            for(int i = 0 ; i < minFreq.length ; i++){
+                minFreq[i] = Math.min(charCount[i],minFreq[i]);
+            }
+        }
+        List<String> result = new ArrayList<>();
+        for(int i = 0 ; i < minFreq.length ; i++){
+            while(minFreq[i] > 0){
+                result.add(Character.toString((char) i + 'a' ));
+                minFreq[i]--;
+            }
+        }
+        return result;
+    }
 
 }
